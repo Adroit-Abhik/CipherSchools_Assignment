@@ -25,8 +25,31 @@ def find_majority_element(arr, n):
         return -1
 
 
+def find_majority_faster(arr, n):
+
+    res = 0
+    count = 1
+    # find element with highest count
+    for i in range(1, n):
+        if arr[res] == arr[i]:
+            count += 1
+        else:
+            count -= 1
+        if count == 0:
+            count = 1
+            res = i
+    count = 0
+    # check if majority
+    for i in range(n):
+        if arr[res] == arr[i]:
+            count += 1
+    if count > n//2:
+        return res
+    else:
+        return -1
+
+
 if __name__ == "__main__":
     n = int(input())
     arr = list(map(int, input().strip().split()))
     print(find_majority_element(arr, n))
-    
