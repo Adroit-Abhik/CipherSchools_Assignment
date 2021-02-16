@@ -19,7 +19,7 @@ def spiraltraversal(arr, row, column):
         if l < row:
             for i in range(column-1, m-1, -1):
                 print(arr[row-1][i], end=" ")
-            m-=1
+            row-=1
         if m < column:
             for i in range(row-1, l-1, -1):
                 print(arr[i][m], end=" ")
