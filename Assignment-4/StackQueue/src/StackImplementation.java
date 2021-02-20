@@ -1,4 +1,6 @@
 import java.util.*;
+
+
 class Stack{
     static int MAX = 1000;
     int top;
